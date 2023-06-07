@@ -34,6 +34,17 @@ export class TestimonialsComponent {
       description: "\"I can't thank this job portal enough for helping me transition into a new industry. As a career changer, I was unsure about finding relevant job opportunities.\""
     }
   ]
+  carouselConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: true,
+    dots: false,
+    autoplaySpeed: 2000,
+    centerMode: true,
+    centerPadding: '80px',
+    variableWidth: true,
 
-  
+   
+  };
+
 }
