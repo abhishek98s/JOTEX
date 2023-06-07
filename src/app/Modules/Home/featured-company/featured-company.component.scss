@@ -1,0 +1,10 @@
+@import "/src/colors";
+
+.featured-box {
+    color: $text-black;
+
+    .company{
+        width: 260px;
+        background: $blue-100;
+    }
+}

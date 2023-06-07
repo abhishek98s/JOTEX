@@ -1,0 +1,64 @@
+@import "../../../../colors";
+
+.circle-big {
+    background: linear-gradient(-40deg, rgba(125, 115, 240, 0.72) 28.63%, rgba(77, 78, 84, 0) 80.7%),
+        url(../../../../assets/image/intev.jpg);
+    transform: scaleX(-1);
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+
+    @media screen and (max-width: 1000px) {
+        min-width: 200px;
+        height: 200px;
+        top: -50px;
+    }
+
+    @media screen and (max-width: 450px) {
+        min-width: 150px;
+        height: 150px;
+    }
+
+    &::after {
+        content: "";
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: -30px;
+        border-radius: 60px;
+        background: linear-gradient(-40deg, #7722e9 6.24%, rgba(239, 227, 255, 0) 117.38%);
+        z-index: 880;
+        transition: 0.5s;
+
+        @media screen and (max-width: 900px) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        top: 6px;
+        right: -50px;
+        border-radius: 60px;
+        background: linear-gradient(-40deg, #1f2855 0%, rgba(31, 40, 85, 0) 114.61%);
+        z-index: 880;
+        transition: 0.5s;
+
+        @media screen and (max-width: 900px) {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.search {
+    transition: 1s;
+    @apply m-auto;
+    button {
+        background: $blue;
+    }
+}

@@ -1,0 +1,17 @@
+@import "/src/colors";
+
+.job-alert-box {
+    color: $text-black;
+
+    form {
+        input{
+            border: 1px solid $neutral-500;
+
+        }
+
+        button {
+            background: $blue-400;
+            color: $text-white;
+        }
+    }
+}

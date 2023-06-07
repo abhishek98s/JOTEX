@@ -1,0 +1,52 @@
+<nav class="nav max-md:hidden">
+    <section class="container flex justify-between items-center h-[50px]">
+        <h2>JOTEX</h2>
+
+
+        <div class="flex grow-1 items-center justify-end gap-[18%] max-lg:gap-[10%]">
+
+            <ul class="flex gap-[24px] label-Medium-SB">
+                <li class="w-[max-content]"><a href="#">Find Job</a></li>
+                <li class="w-[max-content]"><a href="#">Find Talent</a></li>
+                <li class="w-[max-content]"><a href="#">Upload</a> Job</li>
+                <li class="w-[max-content]"><a href="#">About Us</a></li>
+            </ul>
+
+            <div class="login-signup body-small flex gap-[18px] items-center">
+                <a href="#" class="w-[max-content]">Sign Up</a>
+                <a href="#"
+                    class="login label-Medium-SB inline-flex justify-center items-center w-[70px] h-[32px] rounded-[8px]">Sign
+                    In</a>
+            </div>
+        </div>
+    </section>
+</nav>
+
+
+<nav class="mobile-nav max-md:block hidden ">
+    <section class="container flex justify-between py-[12px] items-center">
+        <h2>JOTEX</h2>
+
+        <figure class="w-[24px] h-[24px]" (click)="toggleNav()">
+            <img class="cursor-pointer" src="assets/svg/menu.svg">
+        </figure>
+    </section>
+
+
+    <div *ngIf="showNav" class="navigation absolute z-50 top-[50px] right-0 left-0">
+        <ul class="flex gap-[4px] flex-col items-center justify-center mt-[24px] label-Medium-SB">
+            <li class="w-[max-content] text-center py-[4px]"><a href="#">Find Job</a></li>
+            <li class="w-[max-content] text-center py-[4px]"><a href="#">Find Talent</a></li>
+            <li class="w-[max-content] text-center py-[4px]"><a href="#">Upload Job</a></li>
+            <li class="w-[max-content] text-center py-[4px]"><a href="#">About Us</a></li>
+        </ul>
+
+        <div class="signin-signup body-small flex flex-col mt-[8px] items-center">
+            <a href="#" class="sign-in w-[100%] h-[40px] inline-flex justify-center items-center label-Medium-SB">Sign
+                Up</a>
+            <a href="#"
+                class="sign-up label-Medium-SB inline-flex justify-center items-center w-[100%] text-center h-[40px] rounded-[8px]">Sign
+                In</a>
+        </div>
+    </div>
+</nav>

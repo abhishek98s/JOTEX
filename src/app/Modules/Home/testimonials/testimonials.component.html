@@ -1,0 +1,10 @@
+<section class="testimonials-box container py-[64px]">
+    <app-title [title]="'Testimonials'"></app-title>
+
+
+
+        <div *ngFor="let person of testimonials" class="mt-[56px]" carouselSlide>
+            <app-testimonial [person]="person"></app-testimonial>
+        </div>
+
+</section>

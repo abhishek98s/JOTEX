@@ -1,0 +1,63 @@
+@import "../../../_colors.scss";
+
+nav {
+    background-color: $blue-700;
+    color: white;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .login-signup {
+        .login {
+            background-color: $blue-300;
+        }
+    }
+}
+
+.mobile-nav {
+    .navigation {
+        transition: showNav 0.4s;
+        animation: showNav .6s;
+        overflow: hidden;
+        height: 262px;
+        background: $blue-700;
+
+        @keyframes showNav {
+            from {
+                height: 0;
+            }
+            to {
+                height: 262px;
+            }
+        }
+
+        ul {
+            li {
+                width: 100%; 
+                padding-top: 8px;
+                padding-bottom: 8px;
+
+                &:hover {
+                    background-color: $neutral-400;
+                    color: #000;
+                }
+            }
+        }
+
+        .signin-signup {
+            .sign-in {
+                background-color: $blue-200;
+                border-radius: 10px;
+                color: $text-black;
+            }
+
+            .sign-up {
+                background-color: $blue-500;
+                border-radius: 10px;
+                color: $text-white;
+            }
+        }
+    }
+}

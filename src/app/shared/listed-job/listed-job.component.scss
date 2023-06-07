@@ -1,0 +1,36 @@
+@import "/src/colors";
+
+.job {
+    border: 1px solid $neutral-700;
+    background: #fff;
+
+    .title {
+        color: $text-black;
+    }
+
+    .sub-title {
+        color: $neutral-800;
+    }
+
+    .bottom {
+        background: $blue-500;
+        color: $text-white;
+
+        @media screen and (max-width: 500px) {
+            @apply px-[4%] pb-0;
+        }
+
+        a {
+            transition: 1s;
+            background: $blue-300;
+
+            @media screen and (max-width: 500px) {
+                @apply text-center mx-auto px-[78px] mt-[12px] py-[8px] ;
+            }
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

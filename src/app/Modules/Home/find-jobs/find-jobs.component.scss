@@ -1,0 +1,37 @@
+@import "/src/colors";
+
+section {
+    background: $blue-100;
+    .find-jobs-box {
+        color: $text-black;
+    }
+
+    .filter-buttons {
+        
+        button {
+            color: $text-black;
+            background: #fff;
+            @apply min-w-[146px] rounded-[5px] py-[8px] px-[16px];
+            &:first-of-type {
+                color: $text-white;
+                background: $blue-400;
+                @apply rounded-[5px];
+            }
+        }
+    }
+
+    .pagination {
+        button {
+            width: 35px;
+            height: 35px;
+            background: #fff;
+            @apply rounded-full;
+            color: $text-black;
+
+        }
+        .blue {
+            background-color: $blue;
+            color: #fff;
+        }
+    }
+}

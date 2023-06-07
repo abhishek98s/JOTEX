@@ -1,0 +1,15 @@
+<section class="discover-box py-[64px] container">
+    <app-title class="headline-Medium text-center" [title]="'Discover Your Dreams'"></app-title>
+
+    <article class="categories mt-[56px] flex flex-wrap justify-evenly gap-[20px]">
+
+        <div *ngFor="let category of categories">
+            <app-category [category]="category"></app-category>
+        </div>
+
+        <div *ngFor="let category of categories">
+            <app-category [category]="category"></app-category>
+        </div>
+
+    </article>
+</section>

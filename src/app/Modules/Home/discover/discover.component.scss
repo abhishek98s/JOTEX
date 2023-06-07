@@ -1,0 +1,18 @@
+@import '/src/colors';
+
+.discover-box{
+    color: $text-black;
+
+    .category{
+        background: $blue-100;
+    
+        .svg-circle{
+            background: $neutral-0;
+        }
+
+        .number{
+            color: $blue;
+        }
+    }
+}
+

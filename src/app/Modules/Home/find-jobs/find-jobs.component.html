@@ -1,0 +1,33 @@
+<section class="py-[64px] max-w-[1440px] mx-auto container flex flex-col gap-[32px] max-md:gap-[24px]">
+    <article class="find-jobs-box ">
+        <app-title [title]="'Find Your Jobs'"></app-title>
+    </article>
+
+    <div class="filter-buttons flex mx-auto w-[70%] rounded-[5px] justify-center gap-[12px] flex-wrap max-md:w-[100%]">
+        <button class="label-large">Recent Jobs</button>
+        <button class="label-large">Featured Jobs</button>
+        <button class="label-large">Part Time</button>
+        <button class="label-large">Full Time</button>
+    </div>
+
+    <div class="flex flex-col gap-[32px]">
+        <app-listed-job></app-listed-job>
+        <app-listed-job></app-listed-job>
+        <app-listed-job></app-listed-job>
+        <app-listed-job></app-listed-job>
+    </div>
+
+    <article class="pagination flex gap-[16px] mx-auto w-[max-content]">
+        <button>
+            < </button>
+
+                <div class="flex gap-[4px]">
+                    <button class="blue">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                </div>
+
+                <button>></button>
+    </article>
+</section>
