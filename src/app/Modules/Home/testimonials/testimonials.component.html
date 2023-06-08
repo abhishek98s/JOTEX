@@ -1,16 +1,19 @@
-<section class="testimonials-box container py-[64px]">
-    <app-title [title]="'Testimonials'"></app-title>
+<section class="testimonials-box">
+    <article class="container py-[64px]">
+
+        <app-title [title]="'Testimonials'"></app-title>
 
 
-    <div class="px-[24px]">
-        <ngx-slick-carousel [config]="carouselConfig">
+        <div class="px-[24px]">
+            <ngx-slick-carousel [config]="carouselConfig">
 
-            <div *ngFor="let person of testimonials" class="mt-[56px]" ngxSlickItem>
+                <div *ngFor="let person of testimonials" class="mt-[56px]" ngxSlickItem>
 
-                <app-testimonial [person]="person"></app-testimonial>
+                    <app-testimonial [person]="person"></app-testimonial>
 
-            </div>
-        </ngx-slick-carousel>
-    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
 
+    </article>
 </section>
