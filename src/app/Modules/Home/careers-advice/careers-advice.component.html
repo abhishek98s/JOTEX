@@ -1,0 +1,22 @@
+<section class="careers-adv-box container py-[64px] ">
+    <app-title [title]="'Resources and Career Advice'"></app-title>
+
+    <article class="mt-[48px] flex justify-evenly">
+
+        <div *ngFor="let advice of advices">
+
+            <div class="advice-box w-[280px] h-[324px] overflow-hidden rounded-[20px]">
+                <img src={{advice.img}}>
+
+                <div class="slide-up w-[280px] h-[320px] flex flex-col gap-[12px] items-center">
+                    <h3 class="body-Medium-SB">{{advice.title}}</h3>
+
+                    <div class="line transition-all w-[80%] h-[1px] bg-white"></div>
+
+                    <p class="body-Medium text-center">{{advice.description}}</p>
+                </div>
+            </div>
+
+        </div>
+    </article>
+</section>>

@@ -1,0 +1,33 @@
+@import "/src/colors";
+
+.careers-adv-box {
+    color: $text-black;
+}
+.advice-box {
+    &:hover {
+        .slide-up {
+            padding: 32px 16px;
+            margin-top: -310px;
+        }
+
+        .line {
+            display: block;
+        }
+    }
+}
+
+.slide-up {
+    background: $blue-300;
+    border-radius: 20px;
+    padding: 22px 16px;
+    color: $text-white;
+    transition: 0.4s;
+    margin-top: -60px;
+    position: relative;
+    z-index: 9;
+
+    .line {
+        display: none;
+        transition: .4s;
+    }
+}

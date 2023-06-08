@@ -1,0 +1,10 @@
+@import "/src/colors";
+
+.footer-box {
+    background-image: url("../../../../assets/svg/wave-footer.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: $blue-800;
+    background-size: 100%;
+    color: $text-white;
+}
