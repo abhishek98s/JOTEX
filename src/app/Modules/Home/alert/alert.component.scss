@@ -1,8 +1,8 @@
 @import "/src/colors";
 
 .job-alert-box {
-    color: $text-black;
-
+    color: $text-white;
+    background-color: $blue-900;
     form {
         input{
             border: 1px solid $neutral-500;
