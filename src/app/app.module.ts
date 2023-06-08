@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +15,11 @@ import { FeaturedCompanyComponent } from './Modules/Home/featured-company/featur
 import { TestimonialsComponent } from './Modules/Home/testimonials/testimonials.component';
 import { TestimonialComponent } from './Modules/Home/testimonial/testimonial.component';
 
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CareersAdviceComponent } from './Modules/Home/careers-advice/careers-advice.component';
 import { FooterComponent } from './Modules/Home/footer/footer.component';
+import { JobsModule } from './Modules/jobs/jobs.module';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +33,16 @@ import { FooterComponent } from './Modules/Home/footer/footer.component';
     TestimonialsComponent,
     TestimonialComponent,
     CareersAdviceComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    JobsModule,
     SharedModule,
-    SlickCarouselModule
+    CommonModule,
+    RouterModule,
+    SlickCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
