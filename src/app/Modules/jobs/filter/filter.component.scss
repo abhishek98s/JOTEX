@@ -1,0 +1,53 @@
+@import "/src/colors";
+
+.filter-box {
+    border: 1px solid $neutral-500;
+    color: $text-black;
+
+    .filter {
+        border-bottom: 2px solid $neutral-500;
+        width: 100%;
+        padding-bottom: 12px;
+    }
+
+    h5 {
+        color: $neutral-800;
+        margin-bottom: 4px;
+    }
+
+    select {
+        border: 1px solid $neutral-500;
+        width: 100%;
+        font-size: 12px;
+        padding: 8px 8px;
+
+        &:focus {
+            outline: $blue-800;
+        }
+
+        option {
+            padding: 28px 8px;
+            height: 14px;
+        }
+    }
+
+    .checkbox {
+        @apply flex gap-[8px] items-center mb-[12px] h-[30px];
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .filter-btn {
+        background-color: $blue;
+        color: $text-white;
+    }
+
+    .reset-btn {
+        background-color: transparent;
+        color: $text-black;
+        border: 1px solid $blue-800;
+    }
+}
