@@ -16,7 +16,6 @@ import { TestimonialsComponent } from './Modules/Home/testimonials/testimonials.
 import { TestimonialComponent } from './Modules/Home/testimonial/testimonial.component';
 
 import { CareersAdviceComponent } from './Modules/Home/careers-advice/careers-advice.component';
-import { FooterComponent } from './Modules/Home/footer/footer.component';
 import { JobsModule } from './Modules/jobs/jobs.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -33,7 +32,6 @@ import { RouterModule } from '@angular/router';
     TestimonialsComponent,
     TestimonialComponent,
     CareersAdviceComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,

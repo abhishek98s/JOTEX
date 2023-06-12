@@ -9,12 +9,32 @@
         color: $text-white;
     }
 
-    .title, .location{
+    .title,
+    .location {
         height: max-content;
-        input{
-            &::placeholder{
+        input {
+            &::placeholder {
                 font-size: 14px;
             }
         }
+    }
+
+    .search-result-box {
+        color: $text-black;
+    }
+
+}
+
+.pagination {
+    button {
+        width: 35px;
+        height: 35px;
+        background: #fff;
+        @apply rounded-full;
+        color: $text-black;
+    }
+    .blue {
+        background-color: $blue;
+        color: #fff;
     }
 }

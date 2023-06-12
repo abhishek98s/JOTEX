@@ -1,20 +1,46 @@
-<section class="search-box flex items-center rounded-[20px] p-[2px_2px] pl-[12px]">
-    <div class="grow flex gap-[20px]">
-        <div class="title w-[50%] flex gap-[8px] items-center">
+<div class="search-result-box flex flex-col gap-[16px]">
+    <section class="search-box flex items-center rounded-[20px] p-[2px_2px] pl-[12px]">
+        <div class="grow flex gap-[20px]">
+            <div class="title w-[50%] flex gap-[8px] items-center">
 
-            <figure class="w-[18px] h-[18px]">
-                <img src="assets/svg/search.svg">
-            </figure>
-            <input type="text" class="grow outline-none" placeholder="Search Your Dream Job">
+                <figure class="w-[18px] h-[18px]">
+                    <img src="assets/svg/search.svg">
+                </figure>
+                <input type="text" class="grow outline-none" placeholder="Search Your Dream Job">
+            </div>
+
+            <div class="location w-[50%] flex gap-[8px] items-center">
+                <figure class="w-[16px]">
+                    <img src="assets/svg/location-black.svg">
+                </figure>
+                <input type="text" class="w-[100%] outline-none" placeholder="Job Location">
+            </div>
         </div>
 
-        <div class="location w-[50%] flex gap-[8px] items-center">
-            <figure class="w-[16px]">
-                <img src="assets/svg/location-black.svg">
-            </figure>
-            <input type="text" class="w-[100%] outline-none" placeholder="Job Location">
-        </div>
-    </div>
+        <button class="w-[72px] h-[40px] label-large ml-auto rounded-[20px]">Find</button>
+    </section>
 
-    <button class="w-[72px] h-[40px] label-large ml-auto rounded-[20px]">Find</button>
-</section>
+    <div class="label-large text-black">260 job result</div>
+
+    <section class="flex flex-col gap-[16px]">
+        <app-listed-job></app-listed-job>
+        <app-listed-job></app-listed-job>
+        <app-listed-job></app-listed-job>
+        <app-listed-job></app-listed-job>
+        <app-listed-job></app-listed-job>
+
+        <article class="pagination mb-[16px] flex gap-[16px] mx-auto w-[max-content]">
+            <button>
+                < </button>
+
+                    <div class="flex gap-[4px]">
+                        <button class="blue">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                    </div>
+
+                    <button>></button>
+        </article>
+    </section>
+</div>
