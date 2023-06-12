@@ -1,0 +1,20 @@
+@import "/src/colors";
+
+.search-box {
+    border: 2px solid $neutral-500;
+    color: $text-black;
+
+    button {
+        background: $blue;
+        color: $text-white;
+    }
+
+    .title, .location{
+        height: max-content;
+        input{
+            &::placeholder{
+                font-size: 14px;
+            }
+        }
+    }
+}
