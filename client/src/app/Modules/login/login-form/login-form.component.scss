@@ -1,0 +1,22 @@
+@import "/src/colors";
+
+form {
+    color: $text-black;
+    border: 1px solid $grey;
+
+    .header {
+        border-bottom: 1px solid $text-black;
+    }
+
+    input {
+        border: 1px solid $grey;
+    }
+
+    button {
+        background-color: $blue;
+        color: $text-white;
+    }
+    span a {
+        color: $blue;
+    }
+}

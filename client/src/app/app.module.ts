@@ -19,6 +19,7 @@ import { CareersAdviceComponent } from './Modules/Home/careers-advice/careers-ad
 import { JobsModule } from './Modules/jobs/jobs.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { LoginModule } from './Modules/login/login.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     JobsModule,
+    LoginModule,
     SharedModule,
     CommonModule,
     RouterModule,

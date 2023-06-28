@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'top', pathMatch: 'full' },
   { path: 'top', component: TopPageComponent },
   { path: 'jobs', loadChildren: () => import('./Modules/jobs/jobs-routing.module').then(m => m.JobsRoutingModule) },
+  { path: 'login', loadChildren: () => import('./Modules/login/login-routing.module').then(m => m.LoginRoutingModule) },
 ];
 
 @NgModule({
