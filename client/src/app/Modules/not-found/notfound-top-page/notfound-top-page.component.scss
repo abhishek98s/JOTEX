@@ -1,0 +1,19 @@
+@import "/src/colors";
+
+.title {
+    color: $blue-400;
+}
+
+button {
+    background-color: $blue;
+    color: $text-white;
+    transition: .4s;
+    
+    &:hover{
+        background-color: $blue-500;
+    }
+    
+    &:active{
+        background-color: $blue-700;
+    }
+}

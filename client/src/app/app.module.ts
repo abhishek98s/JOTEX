@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LoginModule } from './Modules/login/login.module';
 import { RegisterModule } from './Modules/register/register.module';
+import { NotFoundModule } from './Modules/not-found/not-found.module';
 
 @NgModule({
   declarations: [
@@ -37,10 +38,11 @@ import { RegisterModule } from './Modules/register/register.module';
     CareersAdviceComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     JobsModule,
     LoginModule,
+    NotFoundModule,
     RegisterModule,
     SharedModule,
     CommonModule,
