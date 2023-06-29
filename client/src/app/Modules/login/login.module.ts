@@ -5,17 +5,19 @@ import { RouterModule } from '@angular/router';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginTopPageComponent } from './login-top-page/login-top-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginInfoComponent } from './login-info/login-info.component';
 
 
 @NgModule({
   declarations: [
     LoginTopPageComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    LoginInfoComponent
   ],
   imports: [
     CommonModule,
+    RouterModule,
     LoginRoutingModule,
-    RouterModule
   ],
 })
 export class LoginModule { }

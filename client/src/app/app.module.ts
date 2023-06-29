@@ -20,6 +20,8 @@ import { JobsModule } from './Modules/jobs/jobs.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LoginModule } from './Modules/login/login.module';
+import { RegisterModule } from './Modules/register/register.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import { LoginModule } from './Modules/login/login.module';
     AppRoutingModule,
     JobsModule,
     LoginModule,
+    RegisterModule,
     SharedModule,
     CommonModule,
     RouterModule,

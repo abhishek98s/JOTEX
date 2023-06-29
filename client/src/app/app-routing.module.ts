@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'top', component: TopPageComponent },
   { path: 'jobs', loadChildren: () => import('./Modules/jobs/jobs-routing.module').then(m => m.JobsRoutingModule) },
   { path: 'login', loadChildren: () => import('./Modules/login/login-routing.module').then(m => m.LoginRoutingModule) },
+  { path: 'register', loadChildren: () => import('./Modules/register/register-routing.module').then(m => m.RegisterRoutingModule) },
 ];
 
 @NgModule({
