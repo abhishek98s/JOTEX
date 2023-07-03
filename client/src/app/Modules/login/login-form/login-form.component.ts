@@ -17,6 +17,8 @@ export class LoginFormComponent {
     password: ''
   }
 
+  buttonDisabled: boolean = false;
+
   constructor(public auth: AppService) { }
 
   inputHandler(e: any) {
@@ -36,8 +38,10 @@ export class LoginFormComponent {
   }
 
   submit(e: any) {
+    this.buttonDisabled = !this.buttonDisabled
     // this.auth.login();
-
+    let isEmpty = Object.values(this.inputValue).some((value) => value === '');
+    
     for (let [key, value] of Object.entries(this.inputValue)) {
       if (value === "") {
         this.error[key] = `Field is required`
@@ -45,7 +49,14 @@ export class LoginFormComponent {
         this.error[key] = ``
       }
     }
-
+    
+    if (isEmpty) {
+      this.buttonDisabled = !this.buttonDisabled
+      return
+    }
+    
+    this.buttonDisabled = !this.buttonDisabled
+    alert("OK")
 
   }
 }

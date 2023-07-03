@@ -17,6 +17,10 @@ form {
         background-color: $blue;
         color: $text-white;
         transition: .4s;
+
+        &:disabled{
+            opacity: 0.4;
+        }
         
         &:hover{
             background-color: $blue-500;

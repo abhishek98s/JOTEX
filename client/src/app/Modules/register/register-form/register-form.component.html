@@ -6,33 +6,33 @@
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Company Name</label>
-        <input [(ngModel)]="inputValue.company" name="company" (onchange)="inputHandler($event)" class=" h-[40px]
+        <input class="body-small" [(ngModel)]="inputValue.company" name="company" (onchange)="inputHandler($event)" class=" h-[40px]
             rounded-[10px]" type="email">
         <p class="error label-Medium">{{error.company}}</p>
     </div>
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Email</label>
-        <input [(ngModel)]="inputValue.email" name="email" (onchange)="inputHandler($event)" class=" h-[40px]
+        <input class="body-small" [(ngModel)]="inputValue.email" name="email" (onchange)="inputHandler($event)" class=" h-[40px]
             rounded-[10px]" type="email">
         <p class="error label-Medium">{{error.email}}</p>
     </div>
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Password</label>
-        <input [(ngModel)]="inputValue.password" name="password" (onchange)="inputHandler($event)" class=" h-[40px]
+        <input class="body-small" [(ngModel)]="inputValue.password" name="password" (onchange)="inputHandler($event)" class=" h-[40px]
             rounded-[10px]" type="password">
         <p class="error label-Medium">{{error.password}}</p>
     </div>
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Confirm Password</label>
-        <input [(ngModel)]="inputValue.confPassword" name="confPassword" (onchange)="inputHandler($event)" class="
+        <input class="body-small" [(ngModel)]="inputValue.confPassword" name="confPassword" (onchange)="inputHandler($event)" class="
             h-[40px] rounded-[10px]" type="password">
         <p class="error label-Medium">{{error.confPassword}}</p>
     </div>
 
-    <button class="h-[40px] rounded-[10px] py-[8px]">Register</button>
+    <button class="h-[40px] rounded-[10px] py-[8px]" [attr.disabled]="buttonDisabled ? true : null">Register</button>
 
     <span class="label-Medium">Already have an account? <a href="#" routerLink="/login"
             class="signin label-Medium-SB underline underline-offset-2">Login</a></span>

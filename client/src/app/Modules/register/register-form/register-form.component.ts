@@ -20,6 +20,8 @@ export class RegisterFormComponent {
     confPassword: "",
   }
 
+  buttonDisabled: boolean = false;
+  validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   inputHandler(e: any) {
     let val = e.target.value;
@@ -46,6 +48,8 @@ export class RegisterFormComponent {
   }
 
   submit(e: any) {
+    this.buttonDisabled = !this.buttonDisabled
+    let isEmpty = Object.values(this.inputValue).some((value) => value === '');
 
     for (let [key, value] of Object.entries(this.inputValue)) {
       if (value === "") {
@@ -54,6 +58,21 @@ export class RegisterFormComponent {
         this.error[key] = ``
       }
     }
+
+    if (!this.inputValue.email.match(this.validRegex)) {
+      this.error.email = "Email inValid"
+    } else {
+      this.error.email = ""
+    }
+
+    if (isEmpty) {
+      this.buttonDisabled = !this.buttonDisabled
+      return
+    }
+
+
+    this.buttonDisabled = !this.buttonDisabled
+    alert("OK")
 
   }
 

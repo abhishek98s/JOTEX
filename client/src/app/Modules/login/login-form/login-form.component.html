@@ -6,14 +6,14 @@
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Email</label>
-        <input [(ngModel)]="inputValue.email" name="email" (onchange)="inputHandler($event)"
+        <input class="body-small" [(ngModel)]="inputValue.email" name="email" (onchange)="inputHandler($event)"
             class="h-[40px] rounded-[10px]" type="email">
         <p class="error label-Medium">{{error.email}}</p>
     </div>
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Password</label>
-        <input [(ngModel)]="inputValue.password" name="password" (onchange)="inputHandler($event)"
+        <input class="body-small" [(ngModel)]="inputValue.password" name="password" (onchange)="inputHandler($event)"
             class="h-[40px] rounded-[10px]" type="password">
         <p class="error label-Medium">{{error.password}}</p>
     </div>
