@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { RouterModule } from '@angular/router';
 import { LoginModule } from './Modules/login/login.module';
 import { RegisterModule } from './Modules/register/register.module';
 import { NotFoundModule } from './Modules/not-found/not-found.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { NotFoundModule } from './Modules/not-found/not-found.module';
     RegisterModule,
     SharedModule,
     CommonModule,
+    FormsModule,
     RouterModule,
+    HttpClientModule,
     SlickCarouselModule,
   ],
   providers: [],

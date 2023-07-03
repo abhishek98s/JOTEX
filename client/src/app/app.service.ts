@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Job } from './Model/category';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -44,9 +45,21 @@ export class AppService {
     }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getJobs() {
     return this.jobs;
+  }
+
+  login() {
+    let body = {
+      email: "abhishek@gmail.com",
+      password: "Abhi123!"
+    }
+
+    this.http.post<any>('https://sialo-backend.vercel.app/api/posts', body).subscribe(data => {
+      console.log(data)
+      return data
+    })
   }
 }
