@@ -4,7 +4,7 @@ import User from "../model/User.js"
 import { NotFound, BadRequestError } from '../errors/index.js'
 
 const register = async (req, res, next) => {
-    console.log({ ...req.body })
+    
     const user = await User.create({ ...req.body })
 
     const token = await user.createJWT()
