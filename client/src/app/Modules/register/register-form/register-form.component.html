@@ -1,26 +1,35 @@
-<form class="w-[332px] px-[20px] pt-[24px] pb-[16px] space-y-[16px] rounded-[20px] flex flex-col max-md:my-[24px]">
+<form (submit)="submit($event)"
+    class="w-[332px] px-[20px] pt-[24px] pb-[16px] space-y-[16px] rounded-[20px] flex flex-col max-md:my-[24px]">
     <div class="header py-[8px]">
         <h2 class="headline-large">Register</h2>
     </div>
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Company Name</label>
-        <input class="h-[40px] rounded-[10px]" type="email">
+        <input [(ngModel)]="inputValue.company" name="company" (onchange)="inputHandler($event)" class=" h-[40px]
+            rounded-[10px]" type="email">
+        <p class="error label-Medium">{{error.company}}</p>
     </div>
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Email</label>
-        <input class="h-[40px] rounded-[10px]" type="email">
+        <input [(ngModel)]="inputValue.email" name="email" (onchange)="inputHandler($event)" class=" h-[40px]
+            rounded-[10px]" type="email">
+        <p class="error label-Medium">{{error.email}}</p>
     </div>
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Password</label>
-        <input class="h-[40px] rounded-[10px]" type="password">
+        <input [(ngModel)]="inputValue.password" name="password" (onchange)="inputHandler($event)" class=" h-[40px]
+            rounded-[10px]" type="password">
+        <p class="error label-Medium">{{error.password}}</p>
     </div>
 
     <div class="gap-[8px] flex flex-col">
         <label class="body-Medium-SB">Confirm Password</label>
-        <input class="h-[40px] rounded-[10px]" type="password">
+        <input [(ngModel)]="inputValue.confPassword" name="confPassword" (onchange)="inputHandler($event)" class="
+            h-[40px] rounded-[10px]" type="password">
+        <p class="error label-Medium">{{error.confPassword}}</p>
     </div>
 
     <button class="h-[40px] rounded-[10px] py-[8px]">Register</button>

@@ -6,6 +6,7 @@ import { RegisterTopPageComponent } from './register-top-page/register-top-page.
 import { RouterModule } from '@angular/router';
 import { RegisterInfoComponent } from './register-info/register-info.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
   imports: [
     CommonModule,
     RouterModule,
-    RegisterRoutingModule
+    RegisterRoutingModule,
+    FormsModule,
   ]
 })
 export class RegisterModule { }

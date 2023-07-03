@@ -12,7 +12,7 @@ export class LoginFormComponent {
     password: ''
   }
 
-  error = {
+  error: any = {
     email: '',
     password: ''
   }
@@ -36,26 +36,16 @@ export class LoginFormComponent {
   }
 
   submit(e: any) {
-    this.auth.login();
+    // this.auth.login();
 
-    let isEmptyValues = Object.values(this.inputValue).every((value) => value === '');
-
-    if (isEmptyValues) {
-      this.error.email = 'Email is reqired'
-      this.error.password = 'Password is reqired'
-      return
+    for (let [key, value] of Object.entries(this.inputValue)) {
+      if (value === "") {
+        this.error[key] = `Field is required`
+      } else {
+        this.error[key] = ``
+      }
     }
 
-    if (!this.inputValue.email) {
-      this.error.email = 'Email is required'
-    }
 
-    if (!this.inputValue.password) {
-      this.error.password = 'Password is reqired'
-    } else {
-      this.error.password = ''
-    }
-
-    // e.target.reset()
   }
 }
