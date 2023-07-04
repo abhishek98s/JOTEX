@@ -1,6 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import sd from "express-async-errors"
+import cors from 'cors'
 
 // Database
 import ConnectDB from "./db/connect.js"
@@ -16,6 +17,22 @@ import errorHandlerMiddleware from './middleware/errorhandler.js'
 const app = express();
 dotenv.config();
 app.use(express.json())
+
+var whitelist = ['http://localhost:4200', 'https://jotex.vercel.app']
+var corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error('Not allowed by CORS'))
+        }
+    },
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: true,
+    optionsSuccessStatus: 204
+}
+
+app.use(cors(corsOptions))
 
 app.get('/', (req, res, next) => {
     res.send(`<h1>Jotex: Job Portal App`)

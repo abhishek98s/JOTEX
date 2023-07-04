@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-register-form',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class RegisterFormComponent {
   inputValue: any = {
     company: "",
+    name: '',
     email: "",
     password: "",
     confPassword: "",
@@ -15,6 +17,7 @@ export class RegisterFormComponent {
 
   error: any = {
     company: "",
+    name: '',
     email: "",
     password: "",
     confPassword: "",
@@ -23,11 +26,21 @@ export class RegisterFormComponent {
   buttonDisabled: boolean = false;
   validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+  constructor(private auth: AppService) { }
+
+  toggleDiableButton() {
+    this.buttonDisabled = !this.buttonDisabled
+  }
+
   inputHandler(e: any) {
     let val = e.target.value;
     switch (e.target.name) {
       case 'company':
         this.inputValue.company = val;
+        break
+
+      case 'name':
+        this.inputValue.name = val;
         break
 
       case 'email':
@@ -64,14 +77,25 @@ export class RegisterFormComponent {
     } else {
       this.error.email = ""
     }
-
+    
     if (isEmpty) {
-      this.buttonDisabled = !this.buttonDisabled
+      this.toggleDiableButton()
       return
+    }
+    
+    if (this.inputValue.password !== this.inputValue.confPassword) {
+      alert("opk")
+      this.error.confPassword = "Password and Confirm password must be same"
+      this.toggleDiableButton()
+      return
+    } else {
+      this.error.confPassword = ""
     }
 
 
-    this.buttonDisabled = !this.buttonDisabled
+    this.auth.register(this.inputValue);
+
+    this.toggleDiableButton()
     alert("OK")
 
   }

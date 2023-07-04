@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Job } from './Model/category';
 import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +46,7 @@ export class AppService {
     }
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getJobs() {
     return this.jobs;
@@ -61,5 +62,14 @@ export class AppService {
       console.log(data)
       return data
     })
+  }
+
+  register(body: any) {
+    delete body.confPassword;
+    let url = 'http://localhost:5000/api/v1/auth/register';
+    this.http.post(url, body).subscribe(data => {
+      this.router.navigate(['/login']);
+    })
+
   }
 }
