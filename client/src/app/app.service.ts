@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Job } from './Model/category';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
+import { catchError, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -52,24 +54,6 @@ export class AppService {
     return this.jobs;
   }
 
-  login() {
-    let body = {
-      email: "abhishek@gmail.com",
-      password: "Abhi123!"
-    }
 
-    this.http.post<any>('https://sialo-backend.vercel.app/api/posts', body).subscribe(data => {
-      console.log(data)
-      return data
-    })
-  }
-
-  register(body: any) {
-    delete body.confPassword;
-    let url = 'http://localhost:5000/api/v1/auth/register';
-    this.http.post(url, body).subscribe(data => {
-      this.router.navigate(['/login']);
-    })
-
-  }
+ 
 }

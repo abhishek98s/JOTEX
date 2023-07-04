@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
+import { ApiServicesService } from 'src/app/services/api-services.service';
 
 @Component({
   selector: 'app-login-form',
@@ -19,7 +21,7 @@ export class LoginFormComponent {
 
   buttonDisabled: boolean = false;
 
-  constructor(public auth: AppService) { }
+  constructor(public auth: AppService, private login: ApiServicesService, private router: Router) { }
 
   inputHandler(e: any) {
     let val = e.target.value;
@@ -38,10 +40,11 @@ export class LoginFormComponent {
   }
 
   submit(e: any) {
+
     this.buttonDisabled = !this.buttonDisabled
     // this.auth.login();
     let isEmpty = Object.values(this.inputValue).some((value) => value === '');
-    
+
     for (let [key, value] of Object.entries(this.inputValue)) {
       if (value === "") {
         this.error[key] = `Field is required`
@@ -49,14 +52,18 @@ export class LoginFormComponent {
         this.error[key] = ``
       }
     }
-    
+
     if (isEmpty) {
       this.buttonDisabled = !this.buttonDisabled
       return
     }
-    
+
+    this.login.login(this.inputValue).subscribe(data => {
+      localStorage.setItem("login", JSON.stringify(data))
+      this.router.navigate(['/']);
+    })
+
     this.buttonDisabled = !this.buttonDisabled
     alert("OK")
-
   }
 }

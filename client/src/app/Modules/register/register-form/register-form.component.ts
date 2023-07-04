@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from 'src/app/app.service';
+import { ApiServicesService } from 'src/app/services/api-services.service';
 
 @Component({
   selector: 'app-register-form',
@@ -26,7 +27,7 @@ export class RegisterFormComponent {
   buttonDisabled: boolean = false;
   validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-  constructor(private auth: AppService) { }
+  constructor(private auth: ApiServicesService) { }
 
   toggleDiableButton() {
     this.buttonDisabled = !this.buttonDisabled
@@ -77,14 +78,13 @@ export class RegisterFormComponent {
     } else {
       this.error.email = ""
     }
-    
+
     if (isEmpty) {
       this.toggleDiableButton()
       return
     }
-    
+
     if (this.inputValue.password !== this.inputValue.confPassword) {
-      alert("opk")
       this.error.confPassword = "Password and Confirm password must be same"
       this.toggleDiableButton()
       return
