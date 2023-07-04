@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FormsModule } from '@angular/forms';
@@ -24,6 +24,7 @@ import { LoginModule } from './Modules/login/login.module';
 import { RegisterModule } from './Modules/register/register.module';
 import { NotFoundModule } from './Modules/not-found/not-found.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,12 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     HttpClientModule,
     SlickCarouselModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
