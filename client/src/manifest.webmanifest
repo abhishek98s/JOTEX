@@ -1,7 +1,7 @@
 {
   "name": "Joex",
   "short_name": "Joex",
-  "theme_color": "#1976d2",
+  "theme_color": "#070707",
   "background_color": "#212121",
   "display": "standalone",
   "scope": "./",
