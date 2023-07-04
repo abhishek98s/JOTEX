@@ -97,7 +97,6 @@ export class RegisterFormComponent {
 
     this.toggleDiableButton()
     alert("OK")
-
   }
 
 }
