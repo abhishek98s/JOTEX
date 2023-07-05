@@ -11,7 +11,9 @@ const jobSchema = mongoose.Schema({
         required: [true, 'Job name is required'],
         minlength: 5,
     },
-    type: {},
+    type: {
+        
+    },
     salary: {},
     category: {
         type: String,

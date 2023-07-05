@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { ApiServicesService } from 'src/app/services/api-services.service';
 
@@ -8,6 +9,8 @@ import { ApiServicesService } from 'src/app/services/api-services.service';
   styleUrls: ['./register-form.component.scss']
 })
 export class RegisterFormComponent {
+  registerErr: boolean = false;
+
   inputValue: any = {
     company: "",
     name: '',
@@ -22,12 +25,13 @@ export class RegisterFormComponent {
     email: "",
     password: "",
     confPassword: "",
+    reqErr: ""
   }
 
   buttonDisabled: boolean = false;
   validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-  constructor(private auth: ApiServicesService) { }
+  constructor(private auth: ApiServicesService, private router: Router) { }
 
   toggleDiableButton() {
     this.buttonDisabled = !this.buttonDisabled
@@ -63,6 +67,8 @@ export class RegisterFormComponent {
 
   submit(e: any) {
     this.buttonDisabled = !this.buttonDisabled
+    this.registerErr = false
+
     let isEmpty = Object.values(this.inputValue).some((value) => value === '');
 
     for (let [key, value] of Object.entries(this.inputValue)) {
@@ -88,15 +94,20 @@ export class RegisterFormComponent {
       this.error.confPassword = "Password and Confirm password must be same"
       this.toggleDiableButton()
       return
-    } else {
-      this.error.confPassword = ""
     }
 
 
-    this.auth.register(this.inputValue);
+    this.auth.register(this.inputValue)
+      .subscribe({
+        next: (data) => {
+          this.router.navigate(['/login']);
+        },
+        error: (e) => {
+          console.log(e)
+          this.registerErr = true
+        }
+      });
 
     this.toggleDiableButton()
-    alert("OK")
   }
-
 }

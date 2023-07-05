@@ -58,12 +58,17 @@ export class LoginFormComponent {
       return
     }
 
-    this.login.login(this.inputValue).subscribe(data => {
-      localStorage.setItem("login", JSON.stringify(data))
-      this.router.navigate(['/']);
-    })
+    this.login.login(this.inputValue)
+      .subscribe({
+        next: (data) => {
+          localStorage.setItem("login", JSON.stringify(data))
+          this.router.navigate(['/']);
+        },
+        error: (e) => {
+          this.error.password = e.error.msg;
+        }
+      })
 
     this.buttonDisabled = !this.buttonDisabled
-    alert("OK")
   }
 }

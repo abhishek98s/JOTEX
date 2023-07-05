@@ -1,23 +1,25 @@
 <form (submit)="submit($event)"
-    class="w-[332px] px-[20px] pt-[24px] pb-[16px] space-y-[16px] rounded-[20px] flex flex-col max-md:my-[24px]">
+    class="w-[400px] px-[20px] pt-[24px] pb-[16px] space-y-[16px] rounded-[20px] flex flex-col max-md:my-[24px]">
     <div class="header py-[8px]">
         <h2 class="headline-large">Register</h2>
     </div>
 
-    <div class="gap-[8px] flex flex-col">
-        <label class="body-Medium-SB">Name</label>
-        <input class="body-small" [(ngModel)]="inputValue.name" name="name" (onchange)="inputHandler($event)"
-            class=" h-[40px]
-            rounded-[10px]" type="email">
-        <p class="error label-Medium">{{error.company}}</p>
-    </div>
 
-    <div class="gap-[8px] flex flex-col">
-        <label class="body-Medium-SB">Company Name</label>
-        <input class="body-small" [(ngModel)]="inputValue.company" name="company" (onchange)="inputHandler($event)"
-            class=" h-[40px]
-        rounded-[10px]" type="email">
-        <p class="error label-Medium">{{error.company}}</p>
+    <div class="flex justify-between">
+        <div class="gap-[8px] flex flex-col w-[48%]">
+            <label class="body-Medium-SB">Name</label>
+            <input class="body-small" [(ngModel)]="inputValue.name" name="name" (onchange)="inputHandler($event)" class=" h-[40px]
+            rounded-[10px]" type="email">
+            <p class="error label-Medium">{{error.company}}</p>
+        </div>
+
+        <div class="gap-[8px] flex flex-col w-[48%]">
+            <label class="body-Medium-SB">Company Name</label>
+            <input class="body-small" [(ngModel)]="inputValue.company" name="company" (onchange)="inputHandler($event)"
+                class=" h-[40px]
+            rounded-[10px]" type="email">
+            <p class="error label-Medium">{{error.company}}</p>
+        </div>
     </div>
 
     <div class="gap-[8px] flex flex-col">
@@ -41,7 +43,14 @@
             (onchange)="inputHandler($event)" class="
             h-[40px] rounded-[10px]" type="password">
         <p class="error label-Medium">{{error.confPassword}}</p>
+        <p class="error label-Medium">{{error.reqErr}}</p>
     </div>
+
+    <div *ngIf="registerErr" class="bg-red-100 p-[12px] rounded-[10px]">
+        <p class="error label-Medium">Name must be 4 character long</p>
+        <p class="error label-Medium">Comapny Name must be 4 character long</p>
+    </div>
+
 
     <button class="h-[40px] rounded-[10px] py-[8px]" [attr.disabled]="buttonDisabled ? true : null">Register</button>
 
