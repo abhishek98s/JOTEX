@@ -10,8 +10,12 @@ export class AuthGuard implements CanActivate {
   constructor(private authService: ApiServicesService, private router: Router) { }
 
   canActivate(): boolean {
-    console.log(this.authService.isLoggedIn())
-    if (this.authService.isLoggedIn()) {
+
+    let data: any = localStorage.getItem("login")
+    let parseData = JSON.parse(data)
+    console.log(parseData)
+
+    if (parseData.user) {
       return true;
     } else {
       this.router.navigate(['/login']);

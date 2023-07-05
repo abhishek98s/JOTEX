@@ -16,8 +16,8 @@ export class ApiServicesService {
   isLoggedIn(): boolean {
     return this.isLoggedInValue;
   }
-  login(data: any) {
 
+  login(data: any) {
     this.isLoggedInValue = true;
     return this.http.post<any>(`${this.apiUrl}`, data)
   }
