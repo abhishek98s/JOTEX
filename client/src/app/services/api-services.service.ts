@@ -30,6 +30,7 @@ export class ApiServicesService {
 
   logout() {
     this.isLoggedInValue = false;
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 }

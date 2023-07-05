@@ -1,6 +1,8 @@
 <nav class="nav max-md:hidden">
     <section class="container flex justify-between items-center h-[50px]">
-        <a routerLink="/"><h2>JOTEX</h2></a>
+        <a routerLink="/">
+            <h2>JOTEX</h2>
+        </a>
 
 
         <div class="flex grow-1 items-center justify-end gap-[18%] max-lg:gap-[10%]">
@@ -13,10 +15,14 @@
             </ul>
 
             <div class="login-signup body-small flex gap-[18px] items-center">
-                <a routerLink="/register" class="w-[max-content]">Sign Up</a>
-                <a routerLink="/login"
-                    class="login label-Medium-SB inline-flex justify-center items-center w-[70px] h-[32px] rounded-[8px]">Sign
-                    In</a>
+                <ng-template [ngIf]="!isLoggedIn"><a routerLink="/register"
+                        class=" w-[max-content] label-Medium-SB">Sign
+                        Up</a></ng-template>
+                <a href="Javascript: Void(0)" (click)="logOut()" *ngIf="isLoggedIn"
+                    class="login login label-Medium-SB inline-flex justify-center items-center w-[70px] h-[32px] rounded-[8px] label-Medium-SB">Logout</a>
+                <ng-template [ngIf]="!isLoggedIn"><a routerLink="/login"
+                        class="login label-Medium-SB inline-flex justify-center items-center w-[70px] h-[32px] rounded-[8px]">Sign
+                        In</a></ng-template>
             </div>
         </div>
     </section>
@@ -42,9 +48,18 @@
         </ul>
 
         <div class="signin-signup body-small flex flex-col mt-[8px] items-center">
-            <a href="#" class="sign-in w-[100%] h-[40px] inline-flex justify-center items-center label-Medium-SB">Register</a>
-            <a href="#"
-                class="sign-up label-Medium-SB inline-flex justify-center items-center w-[100%] text-center h-[40px] rounded-[8px]">Login</a>
+            <ng-template [ngIf]="!isLoggedIn"><a routerLink="/register"
+                    class="sign-in w-[100%] h-[40px] inline-flex justify-center items-center label-Medium-SB">Sing
+                    Up</a>
+            </ng-template>
+
+            <a href="Javascript: Void(0)" (click)="logOut()" *ngIf="isLoggedIn"
+                class="sign-up label-Medium-SB inline-flex justify-center items-center w-[100%] text-center h-[40px] rounded-[8px]">Logout</a>
+
+            <ng-template [ngIf]="!isLoggedIn"><a routerLink="/login"
+                    class="sign-up label-Medium-SB inline-flex justify-center items-center w-[100%] text-center h-[40px] rounded-[8px]">Sign
+                    in</a>
+            </ng-template>
         </div>
     </div>
-</nav>
+</nav> 
